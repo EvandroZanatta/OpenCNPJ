@@ -12,11 +12,15 @@
     <div class="container mt-5">
         <h1 class="mb-4">CNPJ Data Lookup</h1>
         <form id="cnpjForm" class="mb-4">
-            <div class="mb-3">
-                <label for="cnpjInput" class="form-label">Enter CNPJ:</label>
-                <input type="text" class="form-control" id="cnpjInput" placeholder="Enter CNPJ" required>
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="cnpjInput" class="form-label">Enter CNPJ:</label>
+                        <input type="text" class="form-control" id="cnpjInput" placeholder="Enter CNPJ" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
         </form>
         <div id="resultContainer" class="d-none">
             <h2>Company Details:</h2>
@@ -24,6 +28,42 @@
                 <!-- Data will be inserted here dynamically -->
             </div>
         </div>
+    </div>
+    <div class="container mt-3">
+        <h2 class="mb-4">CNPJ Data API Documentation</h2>
+        <p>Welcome to the documentation for the CNPJ Data API. This API allows you to retrieve company details based on
+            a CNPJ (Cadastro Nacional da Pessoa Jurídica) number.</p>
+
+        <h3>API Endpoint</h3>
+        <p>The API endpoint for retrieving company details is:</p>
+        <pre><code>http://{url}/cnpj/{cnpj}</code></pre>
+        <p>Replace <code>{cnpj}</code> with the CNPJ number you want to look up.</p>
+
+        <h3>Usage</h3>
+        <p>To use the API, you can make a GET request to the endpoint using any HTTP client or browser. For example,
+            using the <code>fetch</code> API in JavaScript:</p>
+        <pre><code>fetch('http://{url}/cnpj/{cnpj}')
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));</code></pre>
+
+        <h3>Response</h3>
+        <p>The API returns company details in JSON format. Here is an example response:</p>
+        <pre><code>[
+      {
+        "cnpj": "00000000",
+        "razao_social": "BANCO DO BRASIL SA",
+        "natureza_juridica": "2038",
+        "qualificacao_responsavel": "10",
+        "capital_social": 120000000000,
+        "porte_empresa": "05",
+        "ente_federativo_responsavel": ""
+      }
+    ]</code></pre>
+
+        <h3>Error Handling</h3>
+        <p>If the provided CNPJ is not found or there is an error in the request, the API will return an empty array or
+            an error message, respectively.</p>
     </div>
 
     <script>
