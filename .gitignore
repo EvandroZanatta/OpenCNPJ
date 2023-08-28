@@ -1,2 +1,4 @@
 downloads/
 !.empty
+api/.env
+node_modules
