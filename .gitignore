@@ -1,3 +1,4 @@
 downloads/
+app/.env
 generators/.env
 node_modules
