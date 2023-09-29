@@ -1,4 +1,4 @@
 downloads/
-!.empty
 api/.env
+generators/.env
 node_modules
